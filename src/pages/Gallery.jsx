@@ -3,60 +3,13 @@ import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import { AppContext } from "../context/AppContext.jsx";
 
-const images = import.meta.glob("/src/assets/gallery_images/*.{png,jpg,jpeg,gif}",{eager:true})
-const videos = import.meta.glob("/src/assets/gallery_videos/*.{mp4,mov,mkv,avi}",{eager:true})
-
+const images = import.meta.glob('/src/assets/gallery_images/*.{jpg,jpeg,png,gif}', { eager: true });
+const videos = import.meta.glob('/src/assets/gallery_videos/*.{mp4,mov,avi}', { eager: true });
 
 export default function Gallery() {
   const { language } = useContext(AppContext);
-
-  // const videos = [
-  //   {
-  //     src: gallery_video_1,
-  //     title: "Video 1",
-  //   },
-  //   {
-  //     src: gallery_video_2,
-  //     title: "Video 2",
-  //   },
-  //   {
-  //     src: gallery_video_3,
-  //     title: "Video 3",
-  //   },
-  //   {
-  //     src: gallery_video_4,
-  //     title: "Video 4",
-  //   },
-  //   {
-  //     src: gallery_video_5,
-  //     title: "Video 5",
-  //   },
-  //   {
-  //     src: gallery_video_6,
-  //     title: "Video 6",
-  //   },
-  //   {
-  //     src: gallery_video_7,
-  //     title: "Video 7",
-  //   },
-  //   {
-  //     src: gallery_video_7,
-  //     title: "Video 7",
-  //   },
-  //   {
-  //     src: gallery_video_8,
-  //     title: "Video 8",
-  //   },
-  //   {
-  //     src: gallery_video_9,
-  //     title: "Video 9",
-  //   },
-  //   {
-  //     src: gallery_video_10,
-  //     title: "Video 10",
-  //   },
-    
-  // ];
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   // Pagination state
   const [imageVisibleCount, setImageVisibleCount] = useState(6);
@@ -73,9 +26,6 @@ export default function Gallery() {
 
   return (
     <div>
-      <title>गॅलरी</title>
-      <meta name="description" content="ग्रामपंचायतीशी संबंधित फोटो आणि व्हिडिओ पहा" />
-      <link rel="canonical" href="/gallery" />
       <Header />
       <div className="bg-black text-white min-h-screen flex flex-col items-center px-6 py-12">
         {/* Title */}
@@ -89,6 +39,7 @@ export default function Gallery() {
               <div
                 key={index}
                 className="overflow-hidden rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+                onClick={() => setSelectedImage(photo.default)}
               >
                 <img
                   src={photo.default}
@@ -111,6 +62,23 @@ export default function Gallery() {
               </button>
             </div>
           )}
+
+          {/* Modal */}
+          {selectedImage && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+              onClick={() => setSelectedImage(null)}
+            >
+              <div className="relative bg-white p-4 rounded-lg max-w-3xl max-h-full overflow-auto" onClick={(e) => e.stopPropagation()}>
+                <img src={selectedImage} alt="Enlarged" className="w-full h-auto" />
+                <button
+                  className=" absolute top-2 right-2 mt-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-300"
+                  onClick={() => setSelectedImage(null)}>Close</button>
+
+              </div>
+            </div>
+            )}  
+
         </section>
 
         {/* Videos Section */}
@@ -121,15 +89,17 @@ export default function Gallery() {
               <div
                 key={index}
                 className="rounded-xl overflow-hidden shadow-lg bg-gray-800 hover:shadow-2xl transition duration-300"
+                
               >
-                <div className="w-full h-64 object-cover">
+                <div className="w-full h-64 object-cover"
+                onClick={() => setSelectedVideo(video)}
+                >
                 <video width="100%"
                   height="315px"
                   src={video.default}
                   title={`Video ${index + 1}`} 
                   muted
                   autoPlay
-                  controls
                   loop
                   playsInline
                   
@@ -140,6 +110,7 @@ export default function Gallery() {
             ))}
           </div>
           {/* Show More Button */}
+          {console.log(Object.values(videos).length )}
           {videoVisibleCount < Object.values(videos).length && (
             <div className="flex justify-center mt-8">
               <button
@@ -150,6 +121,22 @@ export default function Gallery() {
               </button>
             </div>
           )}
+
+          {/* Modal */}
+          {selectedVideo && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+              onClick={() => setSelectedVideo(null)}
+            >
+              <div className="relative bg-white p-4 rounded-lg max-w-3xl max-h-full overflow-auto" onClick={(e) => e.stopPropagation()}>
+                <video src={selectedVideo.default} controls className="w-full h-auto" />
+                <button
+                  className=" absolute top-2 right-2 mt-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-300"
+                  onClick={() => setSelectedVideo(null)}>Close</button>
+              </div>
+            </div>
+          )}
+
         </section>
       </div>  
       <Footer />
