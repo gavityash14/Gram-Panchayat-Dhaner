@@ -71,6 +71,7 @@ export default function AboutGramPanchayat() {
       details: `Educational facilities under the Gram Panchayat:<br />
       Zilla Parishad Primary Schools-1<br />
       • Dhaner (Grades 1-4): Boys-55, Girls-53<br />
+      • Late B G Patil Secondary and Higher Secondary School Dhaner Boys-365, Girls-384, Total=749<br />
       Anganwadi Centers-2<br />
       • Children aged 0-6 years: Boys-95, Girls-69`,
       mr_title: "शैक्षणिक सुविधा",
@@ -78,7 +79,9 @@ export default function AboutGramPanchayat() {
 <br />
 जि.प.प्राथमिक शाळा-1
 <br />
-• खामलोन (वर्ग 1 ते 4): मुले-55, मुली-53
+• धनेर  (वर्ग 1 ते 4): मुले-55, मुली-53
+<br />
+• कै. बी. जी. पाटील माध्यमिक आणि उच्च माध्यमिक शाळा धानेर मुले-३६५, मुली-३८४, एकूण=७४९
 <br />
 अंगणवाडी केंद्र-2
 <br />
