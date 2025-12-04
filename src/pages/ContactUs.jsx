@@ -199,7 +199,7 @@ export default function ContactUs() {
               <h3 className='font-bold text-2xl text-center'>Gram Panchayat, Dhaner</h3>
               <hr className='mt-4 mb-4' />
               <p className='md:text-[18px] md:pt-4'><strong>Email Id:</strong> dhanersarpanch@gmail.com</p>
-              <p className='md:text-[18px] md:pt-4'><strong>LGD Code: </strong>174956</p>
+              <p className='md:text-[18px] md:pt-4'><strong>LGD Code: </strong>174356</p>
               <p className='md:text-[18px] md:pt-4'><strong>Censes Code: </strong>526336</p>
             </div>
           </div>
