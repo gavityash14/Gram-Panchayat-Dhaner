@@ -12,6 +12,8 @@ import deputy_chief_minister_2 from "../assets/images/deputy-chief-minister-2.jp
 import guardian_minister from "../assets/images/guardian-minister.png"
 import ias_officer from "../assets/images/IAS - (Aziz Shaikh).png"
 import deputy_chief_executive_officer from "../assets/images/deputy-chief-officer.jpeg"
+import group_development_officer from "../assets/images/group-development-officer.png"
+import extension_officer from "../assets/images/extension-officer.png"
 import sarpanch from "../assets/images/sarpanch.jpg"
 import deputy_sarpanch from "../assets/images/deputy-sarpanch.jpg"
 import panchayat_member_1 from "../assets/images/sad1.jpg"
@@ -58,6 +60,8 @@ export {
     guardian_minister,
     ias_officer,
     deputy_chief_executive_officer,
+    group_development_officer,
+    extension_officer,
     panchayat_officer,
     panchayat_staff_1,
     panchayat_staff_2,

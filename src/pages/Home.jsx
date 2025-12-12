@@ -1,6 +1,6 @@
 import React,{useContext} from 'react'
 import Header from '../components/Header'
-import { slide_img_1, slide_img_2, slide_img_3, slide_img_4, slide_img_5, chief_minister, deputy_chief_minister_1,deputy_chief_minister_2,guardian_minister,ias_officer,deputy_chief_executive_officer } from '../assets/assets'
+import { slide_img_1, slide_img_2, slide_img_3, slide_img_4, slide_img_5, chief_minister, deputy_chief_minister_1,deputy_chief_minister_2,guardian_minister,ias_officer,deputy_chief_executive_officer,group_development_officer,extension_officer } from '../assets/assets'
 import Footer from '../components/Footer'
 import Carousel from '../components/Carousel'
 import { AppContext } from '../context/AppContext'
@@ -87,6 +87,32 @@ export default function Home() {
           <h2 className="mt-3 text-lg font-semibold">{language === "en" ? "Mrs. Snehal Pawar" : "श्रीमती. स्नेहल पवार"}   </h2>
           <h3 className="w-70 text-wrap text-[16px] text-center">{language === "en" ? "Deputy Chief Executive Officer," : "उपमुख्य कार्यकारी अधिकारी,"} </h3>
           <h3 className="w-84 text-wrap text-[16px] text-center">{language === "en" ? "Gram Panchayat Department, Zilla Parishad, Dhule" : "ग्रामपंचायत विभाग, जिल्हा परिषद, धुळे"} </h3>
+        </div>
+
+        {/*Group Development Officer */}
+        <div className="flex flex-col items-center">
+          <img
+            src={group_development_officer}
+            alt="Group Development Officer"
+            className="h-[200px] w-[200px] object-cover "
+            loading="lazy"
+          />
+          <h2 className="mt-3 text-lg font-semibold">{language === "en" ? "Shri. Shashikant Sonawane" : "श्री. शशिकांत सोनवणे"}   </h2>
+          <h3 className="w-70 text-wrap text-[16px] text-center">{language === "en" ? "Hon.Group Development Officer," : "माननीय गटविकास अधिकारी,"} </h3>
+          <h3 className="w-84 text-wrap text-[16px] text-center">{language === "en" ? "Panchayat Committee, Sakri" : "पंचायत समिती, साक्री"} </h3>
+        </div>
+
+        {/*Extension Officer */}
+        <div className="flex flex-col items-center">
+          <img
+            src={extension_officer}
+            alt="Extension Officer"
+            className="h-[200px] w-[200px] object-cover "
+            loading="lazy"
+          />
+          <h2 className="mt-3 text-lg font-semibold">{language === "en" ? "Shri. Shashikant Thakre" : "श्री. शशिकांत ठाकरे"}   </h2>
+          <h3 className="w-70 text-wrap text-[16px] text-center">{language === "en" ? "Extension Officer," : "विस्तार अधिकारी,"} </h3>
+          <h3 className="w-84 text-wrap text-[16px] text-center">{language === "en" ? "Panchayat Committee, Sakri" : "पंचायत समिती, साक्री"} </h3>
         </div>
       </div>
 
